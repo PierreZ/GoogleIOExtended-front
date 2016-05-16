@@ -10,4 +10,7 @@ script:
 - ./travis-runner.sh
 branches:
   except:
-    - gh-pages
+  - gh-pages
+env:
+  global:
+    secure: wffvkK5/y6MIhBMwYNxNzv9LWwdssckYEXT8SWpQJiQ7u3ZjlH4ys5v9w3bvGZDWz2DsXP/CecedxwVUmx6HSXbZxtl7dmAQItqaHni4HiGksaTkn1Ef2hdecWJHv6guWU87Nt/eckTEVtxXJG8aWwGwSjIyZLNxZVbKmHi19FCrCivMtM9TW7rP6S615/ULrpXm9pV3r5kkCEQytqZTUWZ7N0UaA/tAOwZKu/Mu5WdI1Nj7GwObnPwaweqWbD9OdLEZPHx6ijn9lz7YvRHRAoGjvvPuHL3wgkEFiN0u5PzZiK8GNuTXGYFwWwnSfguyuU/b/if3yTdo5RvwNBiV3tF8/bP2o+J/yViPVe7LrYSXPMPStc67XPKesshF9WFxM/pR1csz5zRCrFrQvwGeV8+GDAafvfYB9lO5GaIXiZwQtvKdw89M6taZgxEuzvCqpQ5MqbJlulL3N962xXFvG1pL4mXKB+dggzwLVl8bO9XO1tjzYIxDE6J8a7blN1bkdiLxPWcbrULgnE455qBYyniigeaBubAYZGsctNhu2cN9v2m89cCkWSWKjNKl6cWWop/KxiIU4tgFLYGYeDrk1u/OKjcQs+mnbC3bjqlGsBKdw+riKpd/m9C7Ehd4UWOyQyeShfM/mb1wMZ9vWzPAkW0vrSwIIt003pmZdtC8ZJ0=
