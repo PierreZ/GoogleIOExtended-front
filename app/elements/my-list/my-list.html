@@ -74,7 +74,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     ready: function() {
       this.items = [
       ];
-      var socket = io.connect('app-fecdbcce-3610-477a-a274-8bdc61c99b8b.cleverapps.io')
+      //var socket = io.connect('localhost:8080')
+      var socket = io.connect('https://ioextended-brest.cleverapps.io')
       socket.on('connect', function () {
         socket.on('tweet', function (data) {
           console.log(data)
