@@ -1,0 +1,13 @@
+language: node_js
+node_js: stable
+before_script:
+- npm install bower
+- export PATH=$PWD/node_modules/.bin:$PATH
+- npm install -g gulp
+- bower install
+- gulp
+script:
+- ./travis-runner.sh
+branches:
+  except:
+    - gh-pages
