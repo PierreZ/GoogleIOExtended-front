@@ -20,32 +20,53 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   }
   .tweet{
-        border-bottom: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin-top:-15px;
   }
 
   .user-twitter-img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+
+  }
+  .img_container {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+  }
+
+  .tweet_container {
+    max-width: 190px;
+    padding-right: 0px;
+  }
+  .tweet_text {
+    margin-top: 10px;
   }
 
   span {
     @apply(--paper-font-body1);
   }
+  .flex-horizontal {
+    @apply(--layout-horizontal);
+  }
+  .flexchild {
+    @apply(--layout-flex);
+  }
   </style>
 
-  <ul style="list-style-type:none;padding-left:5px;margin-top:0px">
+  <ul style="list-style-type:none;padding-left:5px;margin-top:-15px">
     <template is="dom-repeat" items="{{items}}">
       <li class="tweet">
-        <div>
-          <div>
-            <img class="user-twitter-img" src="[[item.user.profile_image_url_https]]" style="float:right"/>
-
-            <h4>@[[item.user.screen_name]]</h4>
+        <div class="container flex-horizontal">
+          <div class="img_container">
+            <img class="user-twitter-img" src="[[item.user.profile_image_url_https]]"/>
           </div>
-          <h4></h4>
-          <p>
-            [[item.text]]
-          </p>
+          <div class="flexchild tweet_container">
+            <h4 style="margin-bottom:0px"> @[[item.user.screen_name]]</h4>
+            <p class="tweet_text">
+              [[item.text]]
+            </p>
+          </div>
         </div>
       </li>
     </template>
@@ -74,11 +95,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     ready: function() {
       this.items = [
       ];
-      //var socket = io.connect('localhost:8080')
-      var socket = io.connect('https://ioextended-brest.cleverapps.io')
+      var socket = io.connect('localhost:8080')
+      //var socket = io.connect('https://ioextended-brest.cleverapps.io')
       socket.on('connect', function () {
         socket.on('tweet', function (data) {
-          console.log(data)
           document.querySelector("my-list").add(data);
         });
       });

@@ -22,5 +22,8 @@ body {
 }
 .flexchild {
   @apply(--layout-flex);
-  color: yellow;
+}
+
+.content, my-greeting, google-youtube {
+  height: 100% !important;
 }
