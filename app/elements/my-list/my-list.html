@@ -43,6 +43,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     margin-top: 10px;
   }
 
+  .img_tweet_embbeded {
+    max-width: 255px;
+  }
+
   span {
     @apply(--paper-font-body1);
   }
@@ -52,6 +56,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   .flexchild {
     @apply(--layout-flex);
   }
+
+  img[src="undefined"] {
+    display: none;
+}
   </style>
 
   <ul style="list-style-type:none;padding-left:5px;margin-top:-15px">
@@ -62,12 +70,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <img class="user-twitter-img" src="[[item.user.profile_image_url_https]]"/>
           </div>
           <div class="flexchild tweet_container">
+
             <h4 style="margin-bottom:0px"> @[[item.user.screen_name]]</h4>
             <p class="tweet_text">
               [[item.text]]
             </p>
           </div>
         </div>
+        <img class="img_tweet_embbeded" src="[[item.entities.media.0.media_url_https]]"/>
       </li>
     </template>
   </ul>
